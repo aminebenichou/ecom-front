@@ -50,11 +50,35 @@ aside *:hover{
     margin: 10px;
     padding: 3px;
 }
-#search{
+.search-container {
+    display: flex;
+    align-items: center; /* Aligns items vertically centered */
+}
+
+#search {
     min-width: 450px;
     height: 30px;
-    margin-left: 200px;
+    margin-right: 0; /* Remove left margin */
     font-size: large;
-    padding: 10px;
+    padding-left: 10px;
+    border: 0.5px solid grey;
     border-radius: 25px 0px 0px 25px;
 }
+
+#search-button {
+    background-color: #b1b1b1;
+    border: none;
+    height: 35px;
+    width: 65px;
+    padding: 0px 10px; /* Add some padding for better appearance */
+    border-radius: 0px 25px 25px 0px; /* Match the corners with the input */
+}
+#search-button *{
+    color: white;
+}
+
+#search-button:hover{
+    cursor: pointer;
+}
+
+/* github.com/aminebenichou/ecom-front */
