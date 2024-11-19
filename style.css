@@ -1,0 +1,60 @@
+.row-flex-between{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+.col-flex{
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+aside *{
+    margin: 5px;
+    font-size: larger;
+    padding: 3px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    display: flex;
+    font-size: medium;
+    justify-items: center;
+    align-items: center;
+    justify-content: start;
+    flex-direction: row;
+
+}
+
+
+
+aside *:hover{
+    background-color: lightgrey;
+    cursor: pointer;
+}
+
+.videos {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.video-card{
+    border-radius: 10px;
+}
+.video-card:hover{
+    box-shadow: 3px 3px 30px 5px lightgray;
+}
+
+.account-icon{
+    margin: 10px;
+    padding: 3px;
+}
+#search{
+    min-width: 450px;
+    height: 30px;
+    margin-left: 200px;
+    font-size: large;
+    padding: 10px;
+    border-radius: 25px 0px 0px 25px;
+}
