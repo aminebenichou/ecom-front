@@ -101,29 +101,45 @@ const videos_info = [
 ]
 
 
-
-
-while (index<videos_info.length) {
-    const thumbnail = document.createElement("img")
-    const title = document.createElement("h1")
-    const channel_name = document.createElement("span")
-    const video_card = document.createElement("div")
-    const click_link = document.createElement("a")
-
-    video_card.className = "video-card col-flex"
-    video_card.style = "border: 1px solid black; width: 350px; padding: 10px; margin: 8px;"
-    // thumbnail.style = "width: 300px;"
-    click_link.href = videos_info[index].link
-    thumbnail.src = videos_info[index].thumbnail
-    title.innerHTML = videos_info[index].title
-    channel_name.textContent = videos_info[index].channel_name
-    video_card.appendChild(thumbnail)
-    video_card.appendChild(title)
-    video_card.appendChild(channel_name)
-    click_link.appendChild(video_card)
-    videos.appendChild(click_link)
-    // title.textContent = videos_info[index].title
-
-    index++
+var listOfVideos = [] ;
+async function getVideos() {
+    const yt_videos = await fetch("https://dummyjson.com/products")
+    const data = await yt_videos.json()
+    data.products.forEach(element => {
+        listOfVideos.push(element)
+        
+    });
+    while (index<videos_info.length) {
+        const thumbnail = document.createElement("img")
+        const title = document.createElement("h1")
+        const channel_name = document.createElement("span")
+        const price = document.createElement("price")
+        const video_card = document.createElement("div")
+        const click_link = document.createElement("a")
+    
+        video_card.className = "video-card col-flex"
+        video_card.style = "border: 1px solid black; width: 350px; padding: 10px; margin: 8px;"
+        // thumbnail.style = "width: 300px;"
+        price.innerHTML = listOfVideos[index].price
+        thumbnail.src = listOfVideos[index].thumbnail
+        title.innerHTML = listOfVideos[index].title
+        channel_name.textContent = listOfVideos[index].brand
+        video_card.appendChild(thumbnail)
+        video_card.appendChild(title)
+        video_card.appendChild(channel_name)
+        click_link.appendChild(video_card)
+        videos.appendChild(click_link)
+        // title.textContent = videos_info[index].title
+    
+        index++
+    }
 }
+
+getVideos()
+
+console.log(listOfVideos );
+
+
+
+
 
